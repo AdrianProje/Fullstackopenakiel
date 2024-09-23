@@ -11,3 +11,9 @@
 |  UI Update      | <---- |  Local Data Model | <---- |  New Note Created |
 |                 |       |                   |       |                   |
 +-----------------+       +-------------------+       +-------------------+
+
+
+browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{content: "test", date: "2024-09-22T09:18:38.810Z"}, ... ]
+    deactivate server
