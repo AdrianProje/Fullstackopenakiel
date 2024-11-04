@@ -1,4 +1,5 @@
 const Header4 = ({coursey}) => {
+  console.log(coursey)
   return (
       <div>
           <p>
