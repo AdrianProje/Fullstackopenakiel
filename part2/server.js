@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Zdefiniuj catch-all route z nazwanym segmentem
 app.get('/:pathMatch(.*)', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'App'));
 });
 
 const PORT = process.env.PORT || 3000;
