@@ -1,18 +1,17 @@
 import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url'; // Służy do konwersji URL modułu na ścieżkę pliku
+import { fileURLToPath } from 'url'; 
 
-// Najpierw przekształcamy import.meta.url na __filename...
+// Ustalanie __dirname przy użyciu ES Modules
 const __filename = fileURLToPath(import.meta.url);
-// ...następnie wyznaczamy katalog, w którym znajduje się ten plik
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-// Przechwyć wszystkie pozostałe żądania i oddaj index.html
-app.get('*', (req, res) => {
+// Zdefiniuj catch-all route z nazwanym segmentem
+app.get('/:pathMatch(.*)', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
