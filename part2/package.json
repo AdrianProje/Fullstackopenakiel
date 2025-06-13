@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
    "start": "node server.js",
-    "build": "npx react-scripts build",
+    "build": "vite build",
     "dev": "adrian",
     "lint": "eslint .",
     "preview": "vite preview"
